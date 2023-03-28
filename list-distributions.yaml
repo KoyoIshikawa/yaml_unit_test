@@ -1,0 +1,112 @@
+DistributionList:
+  Items:
+    - ARN: arn:aws:cloudfront::165181188474:distribution/E1CCWMEEVPCZP9
+      Aliases:
+        Quantity: 0
+      CacheBehaviors:
+        Items:
+          - AllowedMethods:
+              CachedMethods:
+                Items:
+                  - HEAD
+                  - GET
+                Quantity: 2
+              Items:
+                - HEAD
+                - GET
+              Quantity: 2
+            CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6
+            Compress: true
+            FieldLevelEncryptionId: ""
+            FunctionAssociations:
+              Quantity: 0
+            LambdaFunctionAssociations:
+              Quantity: 0
+            PathPattern: "*"
+            SmoothStreaming: false
+            TargetOriginId: test-20230118-koyo.s3.ap-northeast-1.amazonaws.com
+            TrustedKeyGroups:
+              Enabled: false
+              Quantity: 0
+            TrustedSigners:
+              Enabled: false
+              Quantity: 0
+            ViewerProtocolPolicy: allow-all
+        Quantity: 1
+      Comment: ""
+      CustomErrorResponses:
+        Quantity: 0
+      DefaultCacheBehavior:
+        AllowedMethods:
+          CachedMethods:
+            Items:
+              - HEAD
+              - GET
+            Quantity: 2
+          Items:
+            - HEAD
+            - GET
+          Quantity: 2
+        CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6
+        Compress: true
+        FieldLevelEncryptionId: ""
+        FunctionAssociations:
+          Quantity: 0
+        LambdaFunctionAssociations:
+          Quantity: 0
+        SmoothStreaming: false
+        TargetOriginId: test-20230118-koyo.s3.ap-northeast-1.amazonaws.com
+        TrustedKeyGroups:
+          Enabled: false
+          Quantity: 0
+        TrustedSigners:
+          Enabled: false
+          Quantity: 0
+        ViewerProtocolPolicy: redirect-to-https
+      DomainName: d1begghxypxeym.cloudfront.net
+      Enabled: true
+      HttpVersion: HTTP2
+      Id: E1CCWMEEVPCZP9
+      IsIPV6Enabled: true
+      LastModifiedTime: "2023-01-25T01:56:33.387000+00:00"
+      OriginGroups:
+        Quantity: 0
+      Origins:
+        Items:
+          - ConnectionAttempts: 3
+            ConnectionTimeout: 10
+            CustomHeaders:
+              Items:
+                - HeaderName: Referer
+                  HeaderValue: test-referer
+              Quantity: 1
+            CustomOriginConfig:
+              HTTPPort: 80
+              HTTPSPort: 443
+              OriginKeepaliveTimeout: 5
+              OriginProtocolPolicy: http-only
+              OriginReadTimeout: 30
+              OriginSslProtocols:
+                Items:
+                  - TLSv1.2
+                Quantity: 1
+            DomainName: test-20230118-koyo.s3-website-ap-northeast-1.amazonaws.com
+            Id: test-20230118-koyo.s3.ap-northeast-1.amazonaws.com
+            OriginAccessControlId: ""
+            OriginPath: ""
+            OriginShield:
+              Enabled: false
+        Quantity: 1
+      PriceClass: PriceClass_200
+      Restrictions:
+        GeoRestriction:
+          Quantity: 0
+          RestrictionType: none
+      Staging: false
+      Status: Deployed
+      ViewerCertificate:
+        CertificateSource: cloudfront
+        CloudFrontDefaultCertificate: true
+        MinimumProtocolVersion: TLSv1
+        SSLSupportMethod: vip
+      WebACLId: ""
