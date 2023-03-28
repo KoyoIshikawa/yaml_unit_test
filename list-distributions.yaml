@@ -1,6 +1,6 @@
 DistributionList:
   Items:
-    - ARN: arn:aws:cloudfront::165181188474:distribution/E1CCWMEEVPCZP9
+    - ARN: arn:aws:cloudfront::000000000:distribution/E1CCWMEEVPCZP9
       Aliases:
         Quantity: 0
       CacheBehaviors:
@@ -24,7 +24,7 @@ DistributionList:
               Quantity: 0
             PathPattern: "*"
             SmoothStreaming: false
-            TargetOriginId: test-20230118-koyo.s3.ap-northeast-1.amazonaws.com
+            TargetOriginId: xxx.s3.ap-northeast-1.amazonaws.com
             TrustedKeyGroups:
               Enabled: false
               Quantity: 0
@@ -55,7 +55,7 @@ DistributionList:
         LambdaFunctionAssociations:
           Quantity: 0
         SmoothStreaming: false
-        TargetOriginId: test-20230118-koyo.s3.ap-northeast-1.amazonaws.com
+        TargetOriginId: xxx.s3.ap-northeast-1.amazonaws.com
         TrustedKeyGroups:
           Enabled: false
           Quantity: 0
@@ -90,8 +90,8 @@ DistributionList:
                 Items:
                   - TLSv1.2
                 Quantity: 1
-            DomainName: test-20230118-koyo.s3-website-ap-northeast-1.amazonaws.com
-            Id: test-20230118-koyo.s3.ap-northeast-1.amazonaws.com
+            DomainName: xxxx.s3-website-ap-northeast-1.amazonaws.com
+            Id: xxxx.s3.ap-northeast-1.amazonaws.com
             OriginAccessControlId: ""
             OriginPath: ""
             OriginShield:
