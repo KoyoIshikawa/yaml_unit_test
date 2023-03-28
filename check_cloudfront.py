@@ -17,3 +17,5 @@ if output.DistributionList_Items_0_ARN == obj["DistributionList"]["Items"][0]["A
     print("OK")
 else:
     print("NG")
+
+for element as
