@@ -1,0 +1,31 @@
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="297px" height="201px" viewBox="-0.5 -0.5 297 201" content="&lt;mxfile&gt;&lt;diagram id=&quot;LGL4N-OzqsvMpDjtxOWw&quot; name=&quot;ページ1&quot;&gt;vZSxcoMwDIafRjvghMAYCE2XThk6+7CKfWcw5ziB9OlrYhOgtHfp0gn5k4TRr/8Aktf9UdOWvymGEqKA9UAOEEUhSXb2MZCbI/EmdKDSgvmiCZzEJ3oYeHoRDM+LQqOUNKJdwlI1DZZmwajWqluWfSi5vLWlFa7AqaRyTd8FM9zRJNpN/BVFxcebwzh1mZqOxX6SM6dMdTNECiC5Vsq4qO5zlIN4oy6u7+WX7OPDNDbmmYbINVypvPjZoNhAlsD+AAWBJIR9BkUMaQx2acV24OnOp5J8DDIfpOE9IEOXm8/cRtG0ujQMh3sDIFnHhcFTS8sh21mbWMZNLe0ptOF6Dj/aFbXBfob8XEdUNRp9syU+S7Yb1+JN9nBPN60sHPfAZ+uKPaPeJdXj1ZOQNvBa/qwrWev6XQ/bYP2K/6LFlgQLLQh5Uovk71rY4+Tfe272FyDFFw==&lt;/diagram&gt;&lt;/mxfile&gt;">
+    <defs/>
+    <g>
+        <rect x="0" y="0" width="120" height="60" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 30px; margin-left: 1px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                中に文字がかけル
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="60" y="34" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                    中に文字がかけル
+                </text>
+            </switch>
+        </g>
+        <ellipse cx="236" cy="160" rx="60" ry="40" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+    </g>
+    <switch>
+        <g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"/>
+        <a transform="translate(0,-5)" xlink:href="https://www.diagrams.net/doc/faq/svg-export-text-problems" target="_blank">
+            <text text-anchor="middle" font-size="10px" x="50%" y="100%">
+                Text is not SVG - cannot display
+            </text>
+        </a>
+    </switch>
+</svg>

@@ -15,9 +15,11 @@ def print_yaml_keys(obj, prefix=""):
             print_yaml_keys(v, prefix=new_prefix)
     else:
         if prefix:
-            with open('output.txt', 'a') as f:
-                f.write("[{}]=\n".format(prefix))
+            with open('check_cloudfront.py', 'a') as f:
+                f.write("[{}]:,".format(prefix))
 
+
+# テンプレートのキーの部分にprefixを入れてやる。
 
 file = "list-distributions.yaml"
 with open(file) as f:
