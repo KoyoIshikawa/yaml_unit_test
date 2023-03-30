@@ -1,5 +1,5 @@
 import yaml
-import output
+import 過去.output as output
 
 file = "list-distributions.yaml"
 with open(file) as f:
