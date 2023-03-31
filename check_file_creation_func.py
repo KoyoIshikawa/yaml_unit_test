@@ -1,3 +1,4 @@
+import check_file_creation_func
 import jinja2
 import yaml
 
@@ -36,3 +37,10 @@ def create_tool(obj):
         # レンダリング結果をファイルに書き込み
         with open(filename, 'w') as f:
             f.write(output)
+
+
+file = "list-distributions.yaml"
+with open(file) as f:
+    obj = yaml.safe_load(f)
+
+check_file_creation_func.create_tool(obj)
