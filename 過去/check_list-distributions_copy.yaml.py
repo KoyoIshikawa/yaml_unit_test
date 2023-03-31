@@ -12,7 +12,7 @@ section = 'section'
 name_prefix = '{}-{}-{}'.format(system, env, section)
 
 target = [
-    {'file': 'yaml_list/list-distributions copy.yaml',
+    {'file': 'yaml_list/list-distributions_copy.yaml',
       'parameters': {'elements': ['DistributionList', 'Items', 0, 'ARN'], 'expected_value': ''},
       'parameters': {'elements': ['DistributionList', 'Items', 0, 'Aliases', 'Quantity'], 'expected_value': ''},
       'parameters': {'elements': ['DistributionList', 'Items', 0, 'CacheBehaviors', 'Items', 0, 'AllowedMethods', 'CachedMethods', 'Items', 0], 'expected_value': ''},
