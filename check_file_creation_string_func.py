@@ -22,18 +22,27 @@ def print_yaml_keys(obj, key_chain, prefix=""):
 def create_tool(obj):
     # テンプレートファイルの読み込み
     with open('template_for_string.txt', 'r') as f:
-        template_str = f.read()
 
-        # 変数の定義 出力ファイル名を定義
         service = "cloudfront"
         filename = 'check_{}.py'.format(service)
+        template_str = ''
 
-        # テンプレートに変数を渡してレンダリング
-        key_chain = []
-        print_yaml_keys(obj, key_chain)
-        template = string.Template(template_str)
-        output = template.substitute(key_chain=key_chain)
+        for line in f:
+            if '${key_list}' in line:
+                key_chain = []
+                print_yaml_keys(obj, key_chain)
+                for key_list in key_chain:
+                    template_str += string.Template(
+                        line).substitute(key_list=key_list)
+            else:
+                template_str += line
 
-        # レンダリング結果をファイルに書き込み
         with open(filename, 'w') as f:
-            f.write(output)
+            f.write(template_str)
+
+
+file = "list-distributions.yaml"
+with open(file) as f:
+    obj = yaml.safe_load(f)
+
+create_tool(obj)

@@ -14,17 +14,6 @@ name_prefix = '{}-{}-{}'.format(system, env, section)
 
 target = [
     {'file': '/Users/koyoishikawa/Desktop/python_yaml/list-distributions.yaml',
-     'parameters': [Template('''{'elements': [${key}], 'expected_value': ''},''').substitute(key=key) for key in key_chain]
+      'parameters': {'elements': [${key_list}], 'expected_value': ''},
     }
 ]
-
-# テンプレートファイルの読み込み
-with open('template.txt', 'r') as f:
-    template = Template(f.read())
-
-    # テンプレートに変数を渡してレンダリング
-    output = template.substitute(target=target)
-
-    # レンダリング結果をファイルに書き込み
-    with open(filename, 'w') as f:
-        f.write(output)
