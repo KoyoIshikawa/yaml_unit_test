@@ -14,7 +14,7 @@ name_prefix = '{}-{}-{}'.format(system, env, section)
 taraget = [
     {'file': '/Users/koyoishikawa/Desktop/python_yaml/list-distributions.yaml',
       'parameters': [{% for key in key_chain %}
-        {'elements': [{{ key }}], 'expected_value': ''},{% endfor %}
+        {'elements': [' {{ key }} '], 'expected_value': ''},{% endfor %}
      ]
     }
 ]
