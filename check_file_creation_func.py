@@ -6,9 +6,9 @@ def print_yaml_keys(obj, key_chain, prefix=""):
     if isinstance(obj, dict):
         for k, v in obj.items():
             if prefix:
-                new_prefix = "{}, \"{}\"".format(prefix, k)
+                new_prefix = "{}, \'{}\'".format(prefix, k)
             else:
-                new_prefix = "\"{}\"".format(k)
+                new_prefix = "\'{}\'".format(k)
             print_yaml_keys(v, key_chain, prefix=new_prefix)
     elif isinstance(obj, list):
         for i, v in enumerate(obj):
@@ -36,13 +36,3 @@ def create_tool(obj):
         # レンダリング結果をファイルに書き込み
         with open(filename, 'w') as f:
             f.write(output)
-
-
-# # テンプレートのキーの部分にprefixを入れてやる。
-file = "list-distributions.yaml"
-with open(file) as f:
-    obj = yaml.safe_load(f)
-
-create_tool(obj)
-# print_yaml_keys(obj, key_chain)
-# print(key_chain)
