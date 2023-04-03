@@ -2,7 +2,6 @@ import yaml
 import os
 import sys
 import cheke_func
-from string import Template
 
 dir = os.getcwd()
 account_env = sys.argv[1]
@@ -13,7 +12,7 @@ section = 'section'
 name_prefix = '{}-{}-{}'.format(system, env, section)
 
 target = [
-    {'file': '/Users/koyoishikawa/Desktop/python_yaml/list-distributions.yaml',
+    {'file': 'yaml_list/list-distributions.yaml',
       'parameters': {'elements': ['DistributionList', 'Items', 0, 'ARN'], 'expected_value': ''},
       'parameters': {'elements': ['DistributionList', 'Items', 0, 'Aliases', 'Quantity'], 'expected_value': ''},
       'parameters': {'elements': ['DistributionList', 'Items', 0, 'CacheBehaviors', 'Items', 0, 'AllowedMethods', 'CachedMethods', 'Items', 0], 'expected_value': ''},
