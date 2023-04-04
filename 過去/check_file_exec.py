@@ -1,4 +1,4 @@
-import 過去.check_file_creation_func as check_file_creation_func
+import check_file_creation_func as check_file_creation_func
 import yaml
 
 file = "list-distributions.yaml"
