@@ -4,36 +4,38 @@ import yaml
 import os
 
 
-def print_yaml_keys(obj, elements, element):
+def print_yaml_keys(obj, elements, elements_list):
     if isinstance(obj, dict):
         for k, v in obj.items():
-            element = element + [k]
-            print_yaml_keys(v, elements, element)
+            elements = elements + ["'{}'".format(k)]
+            print_yaml_keys(v, elements, elements_list)
     elif isinstance(obj, list):
         for i, v in enumerate(obj):
-            element = element + [i]
-            print_yaml_keys(v, elements, element)
+            elements = elements + [i]
+            print_yaml_keys(v, elements, elements_list)
     else:
-        if element:
-            elements.append(element)
+        if elements:
+            elements_list.append(elements)
 
 
-def create_tool(obj, file_path, file_name):
+def create_check_file(obj, file_path, file_name):
     # テンプレートファイルの読み込み
     with open('template.txt', 'r') as f:
         template = jinja2.Template(f.read())
 
         # 変数の定義 出力ファイル名を定義
-        filename = 'check_{}.py'.format(file_name)
+        aws_service_name = 'check_{}.py'.format(file_name)
 
         # テンプレートに変数を渡してレンダリング
-        element = []
         elements = []
-        print_yaml_keys(obj, elements, element)
-        output = template.render(elements=elements, path=file_path)
+        elements_list = []
+        print_yaml_keys(obj, elements, elements_list)
+        contents = []
+        contents.append(dict(file_path=file_path, elements_list=elements_list))
+        output = template.render(contents=contents)
 
         # レンダリング結果をファイルに書き込み
-        with open(filename, 'w') as f:
+        with open(aws_service_name, 'w') as f:
             f.write(output)
 
 
@@ -51,4 +53,4 @@ for file_path in file_paths:
     with open(file_path) as f:
         obj = yaml.safe_load(f)
         file_name = os.path.basename(file_path)
-        create_tool(obj, file_path, file_name)
+        create_check_file(obj, file_path, file_name)
