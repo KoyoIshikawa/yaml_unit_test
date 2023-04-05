@@ -18,22 +18,14 @@ def print_yaml_keys(obj, elements, elements_list):
             elements_list.append(elements)
 
 
-def create_check_file(obj, file_path, file_name):
+def create_check_file(contents, file_name):
     # テンプレートファイルの読み込み
     with open('template.txt', 'r') as f:
         template = jinja2.Template(f.read())
 
         # 変数の定義 出力ファイル名を定義
         aws_service_name = 'check_{}.py'.format(file_name)
-
-        # テンプレートに変数を渡してレンダリング
-        elements = []
-        elements_list = []
-        print_yaml_keys(obj, elements, elements_list)
-        contents = []
-        contents.append(dict(file_path=file_path, elements_list=elements_list))
         output = template.render(contents=contents)
-
         # レンダリング結果をファイルに書き込み
         with open(aws_service_name, 'w') as f:
             f.write(output)
@@ -49,8 +41,14 @@ for root, dirs, files in os.walk(folder_path):
         file_path = os.path.join(root, file)
         file_paths.append(file_path)
 
+contents = []
 for file_path in file_paths:
     with open(file_path) as f:
         obj = yaml.safe_load(f)
-        file_name = os.path.basename(file_path)
-        create_check_file(obj, file_path, file_name)
+        elements = []
+        elements_list = []
+        print_yaml_keys(obj, elements, elements_list)
+        contents.append(dict(file_path=file_path, elements_list=elements_list))
+
+file_name = "cloudfront"
+create_check_file(contents, file_name)

@@ -17,5 +17,5 @@ taraget = [{% for content in contents %}
       'parameters': [{% for element in content.elements_list %}
         {'elements': [{{ element | join(', ') }}], 'expected_value': ''},{% endfor %}
      ]
-    }{% endfor %}
+    },{% endfor %}
 ]
