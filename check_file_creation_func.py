@@ -34,21 +34,32 @@ def create_check_file(contents, file_name):
 # フォルダパス
 folder_path = "yaml_list"
 
-# フォルダ内のファイルパスをリストに格納
-file_paths = []
-for root, dirs, files in os.walk(folder_path):
-    for file in files:
-        file_path = os.path.join(root, file)
-        file_paths.append(file_path)
+# フォルダの一覧を取得(folder_info = [{path: , name:])
+folder_and_file_list = os.listdir(folder_path)
+aws_service_dir_list = []
+for f in folder_and_file_list:
+    if os.path.isdir(os.path.join(folder_path, f)):
+        aws_service_dir_list.append(f)
 
-contents = []
-for file_path in file_paths:
-    with open(file_path) as f:
-        obj = yaml.safe_load(f)
-        elements = []
-        elements_list = []
-        print_yaml_keys(obj, elements, elements_list)
-        contents.append(dict(file_path=file_path, elements_list=elements_list))
+for aws_service_dir in aws_service_dir_list:
+    # フォルダ内のファイルパスをリストに格納
+    file_paths = []
+    aws_service_dir_folder_path = '{}/{}'.format(folder_path, aws_service_dir)
+    for root, dirs, files in os.walk(aws_service_dir_folder_path):
+        for file in files:
+            file_path = os.path.join(root, file)
+            file_paths.append(file_path)
 
-file_name = "cloudfront"
-create_check_file(contents, file_name)
+    # テンプレートにいれるすべての変数をcontentsに格納
+    contents = []
+    for file_path in file_paths:
+        with open(file_path) as f:
+            obj = yaml.safe_load(f)
+            elements = []
+            elements_list = []
+            print_yaml_keys(obj, elements, elements_list)
+            contents.append(
+                dict(file_path=file_path, elements_list=elements_list))
+
+    file_name = aws_service_dir
+    create_check_file(contents, file_name)

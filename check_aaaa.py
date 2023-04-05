@@ -13,7 +13,7 @@ name_prefix = '{}-{}-{}'.format(system, env, section)
 
 
 taraget = [ 
-    {'file': 'yaml_list/aaaa/aaa_1.yaml',
+    {'file': '../yaml_list/aaaa/aaa_1.yaml',
       'parameters': [
         {'elements': ['DistributionList', 'Items', 0, 'ARN'], 'expected_value': ''},
         {'elements': ['DistributionList', 'Items', 0, 'ARN', 'Aliases', 'Quantity'], 'expected_value': ''},
@@ -94,7 +94,7 @@ taraget = [
         {'elements': ['DistributionList', 'Items', 0, 'ARN', 'Aliases', 'CacheBehaviors', 'Comment', 'CustomErrorResponses', 'DefaultCacheBehavior', 'DomainName', 'Enabled', 'HttpVersion', 'Id', 'IsIPV6Enabled', 'LastModifiedTime', 'OriginGroups', 'Origins', 'PriceClass', 'Restrictions', 'Staging', 'Status', 'ViewerCertificate', 'WebACLId'], 'expected_value': ''},
      ]
     }, 
-    {'file': 'yaml_list/aaaa/aaa_2.yaml',
+    {'file': '../yaml_list/aaaa/aaa_2.yaml',
       'parameters': [
         {'elements': ['DistributionList', 'Items', 0, 'ARN'], 'expected_value': ''},
         {'elements': ['DistributionList', 'Items', 0, 'ARN', 'Aliases', 'Quantity'], 'expected_value': ''},

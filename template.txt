@@ -13,7 +13,7 @@ name_prefix = '{}-{}-{}'.format(system, env, section)
 
 
 taraget = [{% for content in contents %} 
-    {'file': '{{content.file_path}}',
+    {'file': '../{{content.file_path}}',
       'parameters': [{% for element in content.elements_list %}
         {'elements': [{{ element | join(', ') }}], 'expected_value': ''},{% endfor %}
      ]
