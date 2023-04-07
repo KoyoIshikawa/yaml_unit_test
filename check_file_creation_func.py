@@ -2,20 +2,22 @@
 import jinja2
 import yaml
 import os
+import copy
 
 
 def print_yaml_keys(obj, elements, elements_list):
+    new_elements = copy.copy(elements)
     if isinstance(obj, dict):
         for k, v in obj.items():
-            elements = elements + ["'{}'".format(k)]
-            print_yaml_keys(v, elements, elements_list)
+            new_elements.append("'{}'".format(k))
+            print_yaml_keys(v, new_elements, elements_list)
     elif isinstance(obj, list):
         for i, v in enumerate(obj):
-            elements = elements + [i]
-            print_yaml_keys(v, elements, elements_list)
+            new_elements.append(i)
+            print_yaml_keys(v, new_elements, elements_list)
     else:
         if elements:
-            elements_list.append(elements)
+            elements_list.append(new_elements)
 
 
 def create_check_file(contents, file_name):
