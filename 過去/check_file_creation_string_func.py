@@ -35,8 +35,8 @@ def create_tool(obj, file, file_name):
                         line).substitute(key_list=key_list)
             elif "${path}" in line:
                 template_str += string.Template(line).substitute(path=file)
-            else
-            template_str += line
+            else:
+                template_str += line
 
         with open(filename, 'w') as f:
             f.write(template_str)

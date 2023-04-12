@@ -1,5 +1,6 @@
 import yaml
 
+
 def print_yaml_keys(obj, prefix=""):
     if isinstance(obj, dict):
         for k, v in obj.items():
@@ -17,10 +18,11 @@ def print_yaml_keys(obj, prefix=""):
             with open('output.txt', 'a') as f:
                 f.write(f"{prefix}\n")
 
+
 # yamlファイルの読み込み
 with open('list-distributions.yaml', 'r') as f:
     obj = yaml.safe_load(f)
 
 # ファイルへの書き込み
 with open('output.txt', 'w') as f:
-    print_yaml_keys(obj, file=f)
+    print_yaml_keys(obj)

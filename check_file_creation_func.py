@@ -7,14 +7,17 @@ import copy
 
 def print_yaml_keys(obj, elements, elements_list):
     new_elements = copy.copy(elements)
+
     if isinstance(obj, dict):
         for k, v in obj.items():
             new_elements.append("'{}'".format(k))
             print_yaml_keys(v, new_elements, elements_list)
+            new_elements.pop()
     elif isinstance(obj, list):
         for i, v in enumerate(obj):
             new_elements.append(i)
             print_yaml_keys(v, new_elements, elements_list)
+            new_elements.pop()
     else:
         if elements:
             elements_list.append(new_elements)
